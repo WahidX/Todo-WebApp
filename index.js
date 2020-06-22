@@ -29,6 +29,11 @@ function clearAll(){
 
 function addNote(){
     
+    if (inputText.value.trim == ""){
+        window.alert("Nothing is typed");
+        return;
+    }
+    
     const noteDiv = document.createElement("div");
     noteDiv.classList.add("note");
     noteDiv.innerHTML = "<input type=\"checkbox\" id="+index+" class=\"note-input\" onclick=\"checkClicked(this)\"><label for="+ index +">"+ inputText.value +"</label><button onclick=\"deleteNote(this)\"><i class=\"fas fa-times\"></i></button>";
@@ -54,8 +59,9 @@ function checkClicked(ele){
 }
 
 function deleteNote(ele){
+    if(ele.parentNode.childNodes[0].checked != true)
+        updateCount(--count);
     ele.parentElement.remove();
-    updateCount(--count);
 }
 
 function updateCount(count){
