@@ -12,8 +12,9 @@ textarea{
     justify-content: center;
     background-color: lightblue;
     justify-content: center;
-    width: 500px;
-    min-width: 30%;
+    width: 100%;
+    min-width: 350px;
+    max-width: 600px;
     height: auto;
     margin: 0 auto;
     padding-top: 15px;
@@ -104,9 +105,12 @@ button{
     overflow: auto;
     padding-left: 20px;
     padding-right: 20px;
-    
 }
 
+
+.note:hover{
+    background-color: aqua;
+}
 .note button{
     float: right;
 }
